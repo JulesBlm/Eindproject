@@ -5,7 +5,7 @@ Jules Blom 11363150
 
 ## What problem will be solved for the user
 
-The user
+The user will be able to easily view the petroleum products trade flow and size of specific nations.
 
 ## What features will be available to solve the problem
 
