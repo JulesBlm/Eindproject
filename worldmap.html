@@ -1,89 +1,305 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<style>
+<head>
+  <meta charset="utf-8">
+  <title>World Crude Oil Trade</title>
+  <style>
 
-.country {
-  fill: #ccc;
-  stroke: #fff;
-  stroke-width: .5px;
-  stroke-linejoin: round;
-}
+  body { 
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-color: "#fff";
+  }
 
-.country:hover {
-  fill: #666;
-}
+  .ticks {
+    font: 10px sans-serif;
+  }
 
-.hidden {
-  display: none;
-}
+  .track,
+  .track-inset,
+  .track-overlay {
+    stroke-linecap: round;
+  }
 
-.graticule {
-  fill: none;
-  stroke: #000;
-  stroke-opacity: .3;
-  stroke-width: .5px;
-}
+  .track {
+    stroke: #000;
+    stroke-opacity: 0.3;
+    stroke-width: 10px;
+  }
 
-.graticule.outline {
-  stroke: #333;
-  stroke-opacity: 1;
-  stroke-width: 1.5px;
-}
+  .track-inset {
+    stroke: #ddd;
+    stroke-width: 8px;
+  }
 
-</style>
+  .track-overlay {
+    pointer-events: stroke;
+    stroke-width: 50px;
+    cursor: crosshair;
+  }
+
+  #handle {
+    fill: #fff;
+    stroke: #000;
+    stroke-opacity: 0.5;
+    stroke-width: 1.25px;
+  }
+
+  .country {
+    fill: #ccc;
+    stroke: #fff;
+    stroke-width: .5px;
+    stroke-linejoin: round;
+  }
+
+  .country:hover {
+    opacity: 0.5;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  </style>
+  <script src="http://d3js.org/d3.v4.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v1.min.js"></script>
+  <script src="http://d3js.org/topojson.v2.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+</head>
+
 <body>
-<svg width="960" height="600"></svg>
-<script src="http://d3js.org/d3.v4.min.js"></script>
-<script src="http://d3js.org/topojson.v2.min.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v0.3.js"></script>
+<form id="controls">
+
+  <label><input type="radio" name="mode" value="imports" > Import</label>
+  <label><input type="radio" name="mode" value="exports" id="exports" checked> Export</label>
+</form>
+
 <script>
 
-var width = 1200,
-    height = 900;
+var width = 1000;
+var height = 800;
 
-// Map part
-var projection = d3.geoWagner6;
-var color = d3.schemeCategory20;
+var margin = {
+    top: 50,
+    right: 50,
+    bottom: 50,
+    left: 50};
+
+var svg = d3.select("body").append("svg")
+  .attr("id", "worldMap")
+  .attr("width", width)
+  .attr("height", height);
+  // .style("background-color", "#deebf7");
+
+var svgSlider = d3.select("body").append("svg")
+  .attr("id", "slidertest")
+  .attr("width", width)
+  .attr("height", 200);
+
+var svgTreemap = d3.select("body").append("svg")
+  .attr("id", "Treemap")
+  .attr("width", 1200)
+  .attr("height", 1200);
+
+// Color function for treemap squares
+var colorTreemap = d3.scaleLinear()
+    .domain([0, 12332145976])
+    .range(["#D3D3D3", "#939393", "black"]);
+
+var format = d3.format(",d");
+
+/*----------------------- MAP PART -----------------------*/
+var projection = d3.geoWinkel3()
+  .scale(width / 2 / Math.PI)
+  .translate([width / 2, height / 2])
 
 var path = d3.geoPath()
-    .projection(projection);
+  .projection(projection);
 
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+var color = d3.scaleLinear()
+  .domain([0, 5000])
+  .range(d3.schemeBlues[5])
 
-// var color = d3.scaleThreshold()
-//     .domain(d3.range(2, 10))
-//     .range(d3.schemeBlues[9]);
+var dictCountries = {};
 
-// Hover tooltip
-var tooltip = d3.select('body').append('div')
-    .attr('class', 'hidden tooltip');
+var treemap = d3.treemap()
+  .tile(d3.treemapSquarify)
+  .size([width, height])
+  .padding(1)
+  .round(true);
 
-// Draw the map from TopoJSON file
-d3.json("world-50m.json", function(error, world) {
-  var countries = topojson.feature(world, world.objects.countries).features,
-      neighbors = topojson.neighbors(world.objects.countries.geometries);
+d3.queue()
+    .defer(d3.json, 'world-50m-cc.json')
+    .defer(d3.json, 'imports.json')
+    .defer(d3.json, 'exports.json')
+    .defer(d3.json, 'data.json')
+    .defer(d3.json, 'treemaptest.json')
+    .await(ready)
+
+
+/* ---------------------------------------------- WHEN DATA IS READY ----------------------------------------------*/
+function ready(error, world, imports, exports, data) {
+  if (error) throw error;
+
+    // Start values
+  trade = exports;
+  year = "2013";
+
+  // Default is exports in 1960
+  updateMap(trade, year)
+
+ /*----------------------- YEAR SLIDER -----------------------*/
+  var x = d3.scaleLinear()
+    .domain([1960, 2013])
+    .range([0, width])
+    .clamp(true);
+
+  var slider = svgSlider.append("g")
+    .attr("class", "slider")
+    .attr("transform", "translate(" + margin.left + "," + 100 / 2 + ")");
+
+  slider.append("line")
+    .attr("class", "track")
+    .attr("x1", x.range()[0])
+    .attr("x2", x.range()[1])
+  .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
+    .attr("class", "track-inset")
+  .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
+    .attr("class", "track-overlay")
+    .call(d3.drag()
+        .on("start.interrupt", function() { slider.interrupt(); })
+        .on("start drag", function() {updateCircle(x.invert(d3.event.x)); })); //console.log(parseInt((x.invert(d3.event.x))))
+
+  slider.insert("g", ".track-overlay")
+      .attr("class", "ticks")
+      .attr("transform", "translate(0," + 18 + ")")
+    .selectAll("text")
+    .data(x.ticks(18))
+    .enter().append("text")
+      .attr("x", x)
+      .attr("text-anchor", "middle")
+      .text(function(d) { return d; });
+
+  var handle = slider.insert("circle", ".track-overlay")
+    .attr("id", "handle")
+    .attr("r", 7)
+    .attr("value", "1960");
+
+  function updateCircle(h) {
+      year = parseInt(h);
+      console.log(year);
+
+      if (document.getElementById('exports').checked) { trade = exports;}
+      else { trade = imports; }
+      updateMap(trade, year)
+
+      handle.attr("cx", x(h));
+  }
+  /* ----------------------- OPTIONS -----------------------*/
+  // Select country by clicking on country TODO
+  var selectedCountry = "nld"
+
+  // Select import or export with radio button
+  var inputElems = d3.selectAll("input")
+    .on("change", function() {
+      var inputValue = this.value;
+
+      if (inputValue === "imports") { trade = imports; }
+      else { trade = exports; } 
+
+      updateMap(trade, year)
+    })
+
+  /* ----------------------- TREEMAP PART -----------------------*/
+  treemapData = data[selectedCountry][year]
+
+  console.log("treemapData:", treemapData)
+  // treemapData.forEach(function (d) {
+  //   console.log(d.country, d.import)
+  // });
+
+  // Constructs a root node from the specified hierarchical data. The specified data must be an object representing the root node.
+  var root = d3.hierarchy(treemapData)
+      .sum(function(d) { return d.import; });
+
+  treemap(root)
+
+  console.log("tm'ed root", root)
+  // console.log("root leaves", root.leaves())
+
+  var square = svgTreemap.selectAll("g")
+    .data(root.leaves()) //Join the data
+    .enter().append("g")
+      .attr("transform", function(d) { return "translate(" + d.x0 + "," + d.y0 + ")" }); 
+
+  square.append("rect")
+    .attr("id", function(d) { return d.data.country; })
+    .attr("width", function(d) { return d.x1 - d.x0; })
+    .attr("height", function(d) { return d.y1 - d.y0; })
+    .attr("fill", function(d) { return colorTreemap(d.data.import); });
+
+  square.append("clipPath")
+      .attr("id", function(d) { return "clip-" + d.data.country; })
+    .append("use")
+      .attr("xlink:href", function(d) { return "#" + d.data.country; });
+
+  square.append("text")
+      .attr("clip-path", function(d) { return "url(#clip-" + d.data.country + ")"; })
+    .selectAll("tspan")
+      .data(function(d) { return d.data.country.split(/(?=[A-Z][^A-Z])/g); })
+    .enter().append("tspan")
+      .attr("x", 4)
+      .attr("y", function(d, i) { return 13 + i * 10; })
+      .text(function(d) { return d; });
+
+  square.append("title")
+      .text(function(d) { return d.data.country + "\n" + format(d.data.import); });
+
+  /*----------------------- MAP PART -----------------------*/
+
+  // Get countries from map
+  var countries = topojson.feature(world, world.objects.countries).features;
 
   svg.selectAll(".country")
       .data(countries)
-    .enter().insert("path", ".graticule")
+    .enter().insert("path")
       .attr("class", "country")
-      .attr("d", path)
-      .style("fill", function(d, i) { return d3.color(d.color = d3.max(neighbors[i], function(n) { return countries[n].color; }) + 1 | 0); })
-    // Hover tooltip
-    .append('path')
-      .attr('class', function(d) { return 'Country ' + d.properties.CODE; })
-      .attr('d', path)
-      .on('mousemove', function(d) {
-        var mouse = d3.mouse( svg.node() ).map( function(d) { console.log(parseInt(d)) ; }); //return parseInt(d);
-            tooltip.classed('hidden', false)
-              .attr('style', 'left:' + (mouse[0] + 15) + 'px; top:' + (mouse[1] - 35) + 'px')
-              .html(d.properties.NAME);
+      .attr("id", function (d) {
+        return d.id;
       })
-      .on('mouseout', function() { tooltip.classed('hidden', true); });
-});
+      .attr("d", path)
+      .style("fill", function (d) {
+            // Lookup country in dictionary with values
+            var countryValue = dictCountries[d.id];
+            // If there is data for the country give a fill
+            if (countryValue)
+              return color(countryValue);
+          })
+
+  // Update when toggle is switched or year is changed
+  function updateMap(tradedata, selectedyear) {
+
+    console.log("selectedyear", selectedyear)
+    // Empty the dictionary
+    dictCountries = {}
+
+    // Make new dictionary with appropriate data
+    tradedata[selectedyear].forEach(function (d) { dictCountries[d.country] = d.value }); // Beetje dubbel werk
+
+    d3.selectAll(".country")
+      .style("fill", function (d) {
+        // Lookup country in dictionary with values
+        var countryValue = dictCountries[d.id];
+
+        // If there is data for the country give a fill
+        if (countryValue)
+          return color(countryValue);
+      })
+
+  }
+}
 
 </script>
+
 </body>
+
 </html>
