@@ -19,9 +19,9 @@ with open(openName, 'rb') as csvfile:
     years = []
 
     for row in temp:
-        country = row[1]
+        country = row[1].upper()
         year = row[0]
-        tradecountry = row[2]
+        tradecountry = row[2].upper()
         try:
             exp = int(row[3])
         except ValueError:

@@ -94,11 +94,11 @@
         },
         {
             "country": "SYR",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "YEM",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "CIV",
@@ -236,11 +236,11 @@
         },
         {
             "country": "SYR",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "YEM",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "CIV",
@@ -330,7 +330,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -472,7 +472,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -614,7 +614,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -756,7 +756,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -882,7 +882,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -898,7 +898,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -1024,7 +1024,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -1040,7 +1040,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -1166,7 +1166,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -1182,7 +1182,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -1308,7 +1308,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -1324,7 +1324,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -1450,7 +1450,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -1466,7 +1466,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -1592,7 +1592,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -1608,7 +1608,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -1734,7 +1734,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -1750,7 +1750,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -1876,7 +1876,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -1892,7 +1892,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -2018,7 +2018,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -2034,7 +2034,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -2160,7 +2160,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -2176,7 +2176,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -2302,7 +2302,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -2318,7 +2318,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -2444,7 +2444,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -2460,7 +2460,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -2586,7 +2586,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -2602,7 +2602,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -2728,7 +2728,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -2744,7 +2744,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -2934,11 +2934,11 @@
         },
         {
             "country": "SYR",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "YEM",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "CIV",
@@ -3644,11 +3644,11 @@
         },
         {
             "country": "SYR",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "YEM",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "CIV",
@@ -3722,7 +3722,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -3738,7 +3738,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -3864,7 +3864,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -3880,7 +3880,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -4022,7 +4022,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -4070,7 +4070,7 @@
         },
         {
             "country": "SYR",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "YEM",
@@ -4164,7 +4164,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -4354,7 +4354,7 @@
         },
         {
             "country": "SYR",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "YEM",
@@ -4496,7 +4496,7 @@
         },
         {
             "country": "SYR",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "YEM",
@@ -4638,11 +4638,11 @@
         },
         {
             "country": "SYR",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "YEM",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "CIV",
@@ -4780,7 +4780,7 @@
         },
         {
             "country": "SYR",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "YEM",
@@ -4858,7 +4858,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -4874,7 +4874,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -5000,7 +5000,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -5016,7 +5016,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -5142,7 +5142,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -5158,7 +5158,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -5284,7 +5284,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -5300,7 +5300,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -5426,7 +5426,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -5442,7 +5442,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -5568,7 +5568,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -5584,7 +5584,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -5710,7 +5710,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -5726,7 +5726,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -5852,7 +5852,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -5868,7 +5868,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -5994,7 +5994,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -6010,7 +6010,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -6136,7 +6136,7 @@
         },
         {
             "country": "TTO",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BGR",
@@ -6152,7 +6152,7 @@
         },
         {
             "country": "LTU",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "BEL",
@@ -6342,11 +6342,11 @@
         },
         {
             "country": "SYR",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "YEM",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "CIV",
@@ -6484,11 +6484,11 @@
         },
         {
             "country": "SYR",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "YEM",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "CIV",
@@ -6626,11 +6626,11 @@
         },
         {
             "country": "SYR",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "YEM",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "CIV",
@@ -6768,11 +6768,11 @@
         },
         {
             "country": "SYR",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "YEM",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "CIV",
@@ -7194,11 +7194,11 @@
         },
         {
             "country": "SYR",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "YEM",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "CIV",
@@ -7336,11 +7336,11 @@
         },
         {
             "country": "SYR",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "YEM",
-            "value": "na"
+            "value": 0
         },
         {
             "country": "CIV",
