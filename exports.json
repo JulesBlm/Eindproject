@@ -248,7 +248,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -390,7 +390,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -532,7 +532,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -674,7 +674,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -702,7 +702,7 @@
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -816,7 +816,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -958,7 +958,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -986,7 +986,7 @@
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -1100,7 +1100,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -1128,7 +1128,7 @@
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -1138,139 +1138,139 @@
     "1968": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -1280,139 +1280,139 @@
     "1969": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -1526,7 +1526,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -1554,7 +1554,7 @@
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -1668,7 +1668,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -1696,7 +1696,7 @@
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -1706,139 +1706,139 @@
     "1964": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -1848,139 +1848,139 @@
     "1965": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -1990,139 +1990,139 @@
     "1966": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -2132,139 +2132,139 @@
     "1967": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -2274,139 +2274,139 @@
     "1960": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -2416,139 +2416,139 @@
     "1961": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -2558,139 +2558,139 @@
     "1962": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -2700,139 +2700,139 @@
     "1963": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -2946,7 +2946,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -3798,7 +3798,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -3826,7 +3826,7 @@
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -3940,7 +3940,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -3968,7 +3968,7 @@
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -4082,7 +4082,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -4224,7 +4224,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -4366,7 +4366,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -4508,7 +4508,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -4650,7 +4650,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -4792,7 +4792,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
@@ -4830,139 +4830,139 @@
     "1979": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -4972,139 +4972,139 @@
     "1978": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -5114,139 +5114,139 @@
     "1977": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -5256,139 +5256,139 @@
     "1976": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -5398,139 +5398,139 @@
     "1975": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -5540,139 +5540,139 @@
     "1974": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -5682,139 +5682,139 @@
     "1973": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -5824,139 +5824,139 @@
     "1972": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -5966,139 +5966,139 @@
     "1971": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -6108,139 +6108,139 @@
     "1970": [
         {
             "country": "CAN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "USA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COL",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ECU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "MEX",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "TTO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VEN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "RUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NOR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GBR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IRQ",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "KWT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "OMN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "QAT",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SAU",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SYR",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "ARE",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "DZA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AGO",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "COD",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "EGY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "GAB",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "LBY",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "NGA",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "BRN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "CHN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "IDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": " MYS",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "VNM",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "Others",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "World",
@@ -7348,7 +7348,7 @@
         },
         {
             "country": "SDN",
-            "value": -1
+            "value": "na"
         },
         {
             "country": "AUS",

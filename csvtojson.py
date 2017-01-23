@@ -94,7 +94,6 @@ for country in years_merged:
             children = h["children"] # key is "children" !!!
             print name, "children:", children
 
-
             test_merge.append(children)
 
         print "///////////////////// testmerge /////////////////////////"
