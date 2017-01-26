@@ -30,301 +30,113 @@
     <label><input type="radio" name="mode" value="exports" id="exports" checked> Export</label>
   </form>
 
-  <div class="col-12 col-md-auto" id="map">
+  <div class="col-12 col-md-auto" id="map"></div>
 
-  </div>
-
-  <div class="col" id="treemapdiv">
-
+  <div class="row" id="secondary">
+    <div class="col" id="treemapdiv"></div>
+    <div class="col" id="barchartdiv"></div>
   </div>
 
 </div>
 
 <script>
 
-var width = 1000;
-var height = 600;
-
-var margin = {
-    top: 50,
-    right: 50,
-    bottom: 50,
-    left: 50};
+var width = 1000,
+    height = 600,
+    margin = {top: 40, right: 40, bottom: 40, left: 40}
+    format = d3.format(",d");
 
 var svgMap = d3.select("#map").append("svg")
   .attr("id", "worldMap")
   .attr("width", 900)
   .attr("height", 550);
-  // .style("background-color", "#deebf7");
 
 var svgSlider = d3.select("#map").append("svg")
-  .attr("id", "slidertest")
+  .attr("id", "slider")
   .attr("width", 1200)
   .attr("height", 80);
 
 var svgTreemap = d3.select("#treemapdiv").append("svg")
   .attr("id", "treemap")
-  .attr("width", 500)
-  .attr("height", 500);
+  .attr("width", 400)
+  .attr("height", 400);
 
-// Class is hidden1 because Bootstrap has its own hidden class interfering
-var tooltip = d3.select('body').append('div')
-      .attr('class', 'hidden tooltip');
+var svgBarchart = d3.select("#barchartdiv").append("svg")
+  .attr("id", "barchart")
+  .attr("width", 450)
+  .attr("height", 450);
+
+var tooltip = d3.select("body").append("div")
+      .attr("class", "hidden tooltip");
 
 // Color function for treemap squares
 var colorTreemap = d3.scaleLinear()
-    .domain([0, 12332145000])
-    .range(["#D3D3D3", "#939393", "black"]);
+    .domain([100000, 12332145000])
+    .range(d3.schemeBlues[5]);
 
-var format = d3.format(",d");
+// var colorBarchart = d3.
+//   .
 
 /*----------------------- MAP PART -----------------------*/
 var projection = d3.geoWinkel3()
   .scale(width / 2 / Math.PI)
-  .translate([width / 2, height / 2])
+  .translate([width / 2, height / 2]);
 
 var path = d3.geoPath()
   .projection(projection);
 
 var colorMap = d3.scaleLinear()
   .domain([100, 1200])
-  .range(d3.schemeBlues[5])
+  .range(d3.schemeBlues[5]);
 
 var dictCountries = {};
 
 var treemap = d3.treemap()
-  .tile(d3.treemapSquarify)
+  .tile(d3.treemapBinary)
   .size([500, 500])
   .padding(1)
   .round(true);
 
-var countrycodesDict = { "AFG": "Afghanistan", "ALB": "Albania", "DZA": "Algeria", "ASM": "American Samoa", "AND": "Andorra", "AGO": "Angola", "AIA": "Anguilla", "ATA": "Antarctica", "ATG": "Antigua and Barbuda", "ARG": "Argentina", "ARM": "Armenia", "ABW": "Aruba", "AUS": "Australia", "AUT": "Austria", "AZE": "Azerbaijan", "BHS": "Bahamas", "BHR": "Bahrain", "BGD": "Bangladesh", "BRB": "Barbados", "BLR": "Belarus", "BEL": "Belgium", "BLZ": "Belize", "BEN": "Benin", "BMU": "Bermuda", "BTN": "Bhutan", "BOL": "Bolivia", "BES": "Bonaire", "BIH": "Bosnia and Herzegovina", "BWA": "Botswana", "BVT": "Bouvet Island", "BRA": "Brazil", "IOT": "British Indian Ocean Territory", "BRN": "Brunei Darussalam", "BGR": "Bulgaria", "BFA": "Burkina Faso", "BDI": "Burundi", "KHM": "Cambodia", "CMR": "Cameroon", "CAN": "Canada", "CPV": "Cape Verde", "CYM": "Cayman Islands", "CAF": "Central African Republic", "TCD": "Chad", "CHL": "Chile", "CHN": "China", "COL": "Colombia", "COM": "Comoros", "COG": "Republic of Congo", "COD": "Congo", "COK": "Cook Islands", "CRI": "Costa Rica", "CIV": "Côte dIvoire", "HRV": "Croatia", "CUB": "Cuba", "CUW": "Curaçao", "CYP": "Cyprus", "CZE": "Czech Republic", "DNK": "Denmark", "DJI": "Djibouti", "DMA": "Dominica", "DOM": "Dominican Republic", "ECU": "Ecuador", "EGY": "Egypt", "SLV": "El Salvador", "GNQ": "Equatorial Guinea", "ERI": "Eritrea", "EST": "Estonia", "ETH": "Ethiopia", "FLK": "Falkland Islands (Malvinas)", "FRO": "Faroe Islands", "FJI": "Fiji", "FIN": "Finland", "FRA": "France", "GUF": "French Guiana", "PYF": "French Polynesia", "ATF": "French Southern Territories", "GAB": "Gabon", "GMB": "Gambia", "GEO": "Georgia", "DEU": "Germany", "GHA": "Ghana", "GIB": "Gibraltar", "GRC": "Greece", "GRL": "Greenland", "GRD": "Grenada", "GLP": "Guadeloupe", "GUM": "Guam", "GTM": "Guatemala", "GGY": "Guernsey", "GIN": "Guinea", "GNB": "Guinea-Bissau", "GUY": "Guyana", "HTI": "Haiti", "HMD": "Heard Island and McDonald Islands", "VAT": "Vatican City State", "HND": "Honduras", "HKG": "Hong Kong", "HUN": "Hungary", "ISL": "Iceland", "IND": "India", "IDN": "Indonesia", "IRN": "Iran", "IRQ": "Iraq", "IRL": "Ireland", "IMN": "Isle of Man", "ISR": "Israel", "ITA": "Italy", "JAM": "Jamaica", "JPN": "Japan", "JEY": "Jersey", "JOR": "Jordan", "KAZ": "Kazakhstan", "KEN": "Kenya", "KIR": "Kiribati", "PRK": "North Korea", "KOR": "South Korea", "KWT": "Kuwait", "KGZ": "Kyrgyzstan", "LAO": "Laos", "LVA": "Latvia", "LBN": "Lebanon", "LSO": "Lesotho", "LBR": "Liberia", "LBY": "Libya", "LIE": "Liechtenstein", "LTU": "Lithuania", "LUX": "Luxembourg", "MAC": "Macao", "MKD": "Macedonia", "MDG": "Madagascar", "MWI": "Malawi", "MYS": "Malaysia", "MDV": "Maldives", "MLI": "Mali", "MLT": "Malta", "MHL": "Marshall Islands", "MTQ": "Martinique", "MRT": "Mauritania", "MUS": "Mauritius", "MYT": "Mayotte", "MEX": "Mexico", "FSM": "Micronesia", "MDA": "Moldova", "MCO": "Monaco", "MNG": "Mongolia", "MNE": "Montenegro", "MSR": "Montserrat", "MAR": "Morocco", "MOZ": "Mozambique", "MMR": "Myanmar", "NAM": "Namibia", "NRU": "Nauru", "NPL": "Nepal", "NLD": "Netherlands", "NCL": "New Caledonia", "NZL": "New Zealand", "NIC": "Nicaragua", "NER": "Niger", "NGA": "Nigeria", "NIU": "Niue", "NFK": "Norfolk Island", "MNP": "Northern Mariana Islands", "NOR": "Norway", "OMN": "Oman", "PAK": "Pakistan", "PLW": "Palau", "PSE": "Palestine", "PAN": "Panama", "PNG": "Papua New Guinea", "PRY": "Paraguay", "PER": "Peru", "PHL": "Philippines", "PCN": "Pitcairn", "POL": "Poland", "PRT": "Portugal", "PRI": "Puerto Rico", "QAT": "Qatar", "REU": "Réunion", "ROU": "Romania", "RUS": "Russian Federation", "RWA": "Rwanda", "KNA": "Saint Kitts and Nevis", "LCA": "Saint Lucia", "MAF": "Saint Martin (French part)", "SPM": "Saint Pierre and Miquelon", "VCT": "Saint Vincent and the Grenadines", "WSM": "Samoa", "SMR": "San Marino", "STP": "Sao Tome and Principe", "SAU": "Saudi Arabia", "SEN": "Senegal", "SRB": "Serbia", "SYC": "Seychelles", "SLE": "Sierra Leone", "SGP": "Singapore", "SXM": "Sint Maarten (Dutch part)", "SVK": "Slovakia", "SVN": "Slovenia", "SLB": "Solomon Islands", "SOM": "Somalia", "ZAF": "South Africa", "SGS": "South Georgia and the South Sandwich Islands", "SSD": "South Sudan", "ESP": "Spain", "LKA": "Sri Lanka", "SDN": "Sudan", "SUR": "Suriname", "SJM": "Svalbard and Jan Mayen", "SWZ": "Swaziland", "SWE": "Sweden", "CHE": "Switzerland", "SYR": "Syrian Arab Republic", "TWN": "Taiwan", "TJK": "Tajikistan", "TZA": "Tanzania", "THA": "Thailand", "TLS": "Timor-Leste", "TGO": "Togo", "TKL": "Tokelau", "TON": "Tonga", "TTO": "Trinidad and Tobago", "TUN": "Tunisia", "TUR": "Turkey", "TKM": "Turkmenistan", "TCA": "Turks and Caicos Islands", "TUV": "Tuvalu", "UGA": "Uganda", "UKR": "Ukraine", "ARE": "United Arab Emirates", "GBR": "United Kingdom", "USA": "United States", "UMI": "United States Minor Outlying Islands", "URY": "Uruguay", "UZB": "Uzbekistan", "VUT": "Vanuatu", "VEN": "Venezuela", "VNM": "Viet Nam", "VGB": "Virgin Islands", "VIR": "Virgin Islands", "WLF": "Wallis and Futuna", "ESH": "Western Sahara", "YEM": "Yemen", "ZMB": "Zambia", "ZWE": "Zimbabwe"};
-
-function colorSelectedCountry(selectedCountry) {
-  d3.selectAll("#" + selectedCountry)
-    .style("fill", "#FF7976");
-}
+// Dictionary for displaying full country names
+var countrycodesDict = { "AFG": "Afghanistan", "ALB": "Albania", "DZA": "Algeria", "ASM": "American Samoa", "AND": "Andorra", "AGO": "Angola", "AIA": "Anguilla", "ATA": "Antarctica", "ATG": "Antigua and Barbuda", "ARG": "Argentina", "ARM": "Armenia", "ABW": "Aruba", "AUS": "Australia", "AUT": "Austria", "AZE": "Azerbaijan", "BHS": "Bahamas", "BHR": "Bahrain", "BGD": "Bangladesh", "BRB": "Barbados", "BLR": "Belarus", "BEL": "Belgium", "BLZ": "Belize", "BEN": "Benin", "BMU": "Bermuda", "BTN": "Bhutan", "BOL": "Bolivia", "BES": "Bonaire", "BIH": "Bosnia and Herzegovina", "BWA": "Botswana", "BVT": "Bouvet Island", "BRA": "Brazil", "IOT": "British Indian Ocean Territory", "BRN": "Brunei Darussalam", "BGR": "Bulgaria", "BFA": "Burkina Faso", "BDI": "Burundi", "KHM": "Cambodia", "CMR": "Cameroon", "CAN": "Canada", "CPV": "Cape Verde", "CYM": "Cayman Islands", "CAF": "Central African Republic", "TCD": "Chad", "CHL": "Chile", "CHN": "China", "COL": "Colombia", "COM": "Comoros", "COG": "Republic of Congo", "COD": "Congo", "COK": "Cook Islands", "CRI": "Costa Rica", "CIV": "Côte dIvoire", "HRV": "Croatia", "CUB": "Cuba", "CUW": "Curaçao", "CYP": "Cyprus", "CZE": "Czech Republic", "DNK": "Denmark", "DJI": "Djibouti", "DMA": "Dominica", "DOM": "Dominican Republic", "ECU": "Ecuador", "EGY": "Egypt", "SLV": "El Salvador", "GNQ": "Equatorial Guinea", "ERI": "Eritrea", "EST": "Estonia", "ETH": "Ethiopia", "FLK": "Falkland Islands (Malvinas)", "FRO": "Faroe Islands", "FJI": "Fiji", "FIN": "Finland", "FRA": "France", "GUF": "French Guiana", "PYF": "French Polynesia", "ATF": "French Southern Territories", "GAB": "Gabon", "GMB": "Gambia", "GEO": "Georgia", "DEU": "Germany", "GHA": "Ghana", "GIB": "Gibraltar", "GRC": "Greece", "GRL": "Greenland", "GRD": "Grenada", "GLP": "Guadeloupe", "GUM": "Guam", "GTM": "Guatemala", "GGY": "Guernsey", "GIN": "Guinea", "GNB": "Guinea-Bissau", "GUY": "Guyana", "HTI": "Haiti", "HMD": "Heard Island and McDonald Islands", "VAT": "Vatican City State", "HND": "Honduras", "HKG": "Hong Kong", "HUN": "Hungary", "ISL": "Iceland", "IND": "India", "IDN": "Indonesia", "IRN": "Iran", "IRQ": "Iraq", "IRL": "Ireland", "IMN": "Isle of Man", "ISR": "Israel", "ITA": "Italy", "JAM": "Jamaica", "JPN": "Japan", "JEY": "Jersey", "JOR": "Jordan", "KAZ": "Kazakhstan", "KEN": "Kenya", "KIR": "Kiribati", "PRK": "North Korea", "KOR": "South Korea", "KWT": "Kuwait", "KGZ": "Kyrgyzstan", "LAO": "Laos", "LVA": "Latvia", "LBN": "Lebanon", "LSO": "Lesotho", "LBR": "Liberia", "LBY": "Libya", "LIE": "Liechtenstein", "LTU": "Lithuania", "LUX": "Luxembourg", "MAC": "Macao", "MKD": "Macedonia", "MDG": "Madagascar", "MWI": "Malawi", "MYS": "Malaysia", "MDV": "Maldives", "MLI": "Mali", "MLT": "Malta", "MHL": "Marshall Islands", "MTQ": "Martinique", "MRT": "Mauritania", "MUS": "Mauritius", "MYT": "Mayotte", "MEX": "Mexico", "FSM": "Micronesia", "MDA": "Moldova", "MCO": "Monaco", "MNG": "Mongolia", "MNE": "Montenegro", "MSR": "Montserrat", "MAR": "Morocco", "MOZ": "Mozambique", "MMR": "Myanmar", "NAM": "Namibia", "NRU": "Nauru", "NPL": "Nepal", "NLD": "the Netherlands", "NCL": "New Caledonia", "NZL": "New Zealand", "NIC": "Nicaragua", "NER": "Niger", "NGA": "Nigeria", "NIU": "Niue", "NFK": "Norfolk Island", "MNP": "Northern Mariana Islands", "NOR": "Norway", "OMN": "Oman", "PAK": "Pakistan", "PLW": "Palau", "PSE": "Palestine", "PAN": "Panama", "PNG": "Papua New Guinea", "PRY": "Paraguay", "PER": "Peru", "PHL": "Philippines", "PCN": "Pitcairn", "POL": "Poland", "PRT": "Portugal", "PRI": "Puerto Rico", "QAT": "Qatar", "REU": "Réunion", "ROU": "Romania", "RUS": "Russia", "RWA": "Rwanda", "KNA": "Saint Kitts and Nevis", "LCA": "Saint Lucia", "MAF": "Saint Martin (French part)", "SPM": "Saint Pierre and Miquelon", "VCT": "Saint Vincent and the Grenadines", "WSM": "Samoa", "SMR": "San Marino", "STP": "Sao Tome and Principe", "SAU": "Saudi Arabia", "SEN": "Senegal", "SRB": "Serbia", "SYC": "Seychelles", "SLE": "Sierra Leone", "SGP": "Singapore", "SXM": "Sint Maarten (Dutch part)", "SVK": "Slovakia", "SVN": "Slovenia", "SLB": "Solomon Islands", "SOM": "Somalia", "ZAF": "South Africa", "SGS": "South Georgia and the South Sandwich Islands", "SSD": "South Sudan", "ESP": "Spain", "LKA": "Sri Lanka", "SDN": "Sudan", "SUR": "Suriname", "SJM": "Svalbard and Jan Mayen", "SWZ": "Swaziland", "SWE": "Sweden", "CHE": "Switzerland", "SYR": "Syrian Arab Republic", "TWN": "Taiwan", "TJK": "Tajikistan", "TZA": "Tanzania", "THA": "Thailand", "TLS": "Timor-Leste", "TGO": "Togo", "TKL": "Tokelau", "TON": "Tonga", "TTO": "Trinidad and Tobago", "TUN": "Tunisia", "TUR": "Turkey", "TKM": "Turkmenistan", "TCA": "Turks and Caicos Islands", "TUV": "Tuvalu", "UGA": "Uganda", "UKR": "Ukraine", "ARE": "United Arab Emirates", "GBR": "United Kingdom", "USA": "United States", "UMI": "United States Minor Outlying Islands", "URY": "Uruguay", "UZB": "Uzbekistan", "VUT": "Vanuatu", "VEN": "Venezuela", "VNM": "Viet Nam", "VGB": "Virgin Islands", "VIR": "Virgin Islands", "WLF": "Wallis and Futuna", "ESH": "Western Sahara", "YEM": "Yemen", "ZMB": "Zambia", "ZWE": "Zimbabwe"};
 
 d3.queue()
-    .defer(d3.json, 'world-50m-cc.json')
-    .defer(d3.json, 'imports.json')
-    .defer(d3.json, 'exports.json')
-    .defer(d3.json, 'data.json')
-    .await(ready)
+    .defer(d3.json, "world-50m-cc.json")
+    .defer(d3.json, "imports.json")
+    .defer(d3.json, "exports.json")
+    .defer(d3.json, "data.json")
+    .await(ready);
 
 /* ---------------------------------------------- WHEN DATA IS READY ----------------------------------------------*/
 function ready(error, world, imports, exports, data) {
   if (error) throw error;
 
   // Default is exports in 2013
-  trade = exports;
-  year = 2013;
+  var trade = exports,
+      year = 2013;
+
   var country;
+  var tradeString;
+  var treemapCountry;
 
   updateMap(trade, year)
 
-/* ----------------------- RADIO BUTTON TOGGLE -----------------------*/
+  /* ----------------------- RADIO BUTTON TOGGLE -----------------------*/
   // Select import or export with radio button
   var inputElems = d3.selectAll("input")
     .on("change", function() {
       var inputValue = this.value;
 
-      if (inputValue === "imports") { trade = imports; console.log("imports") }
-      else { trade = exports; console.log("exports") } 
+      if (inputValue === "imports") { trade = imports; }
+      else { trade = exports;}
 
-      updateMap(trade, year)
+      updateMap(trade, year, country)
 
-      if (!(country === undefined)) { updateTreemap(country, year, trade) }
+      if (!(country === undefined)) { updateTreemap(country, year); }
+      if (!(treemapCountry === undefined)) { clearBarchart(); }
     })
 
- /*----------------------- YEAR SLIDER -----------------------*/
-  var x = d3.scaleLinear()
-    .domain([1960, 2013])
-    .range([0, width])
-    .clamp(true);
-
-  var slider = svgSlider.append("g")
-    .attr("class", "slider")
-    .attr("transform", "translate(" + margin.left + "," + 100 / 2 + ")");
-
-  slider.append("line")
-    .attr("class", "track")
-    .attr("x1", x.range()[0])
-    .attr("x2", x.range()[1])
-  .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
-    .attr("class", "track-inset")
-  .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
-    .attr("class", "track-overlay")
-    .call(d3.drag()
-        .on("start.interrupt", function() { slider.interrupt(); })
-        .on("start drag", function() { updateSliderCircle(x.invert(d3.event.x)) ; }));
-
-  slider.insert("g", ".track-overlay")
-      .attr("class", "ticks")
-      .attr("transform", "translate(0," + 18 + ")")
-    .selectAll("text")
-    .data(x.ticks(18))
-    .enter().append("text")
-      .attr("x", x)
-      .attr("text-anchor", "middle")
-      .text(function(d) { return d; });
-
-  var handle = slider.insert("circle", ".track-overlay")
-    .attr("id", "handle")
-    .attr("r", 7)
-    .attr("cx", x(2013));
-
-  function updateSliderCircle(h) {
-      handle.attr("cx", x(h));
-
-      year = parseInt(h);
-
-      if (document.getElementById('exports').checked) { trade = exports; console.log("exports");}
-      else { trade = imports; console.log("imports");}
-
-      updateMap(trade, year);
-      colorSelectedCountry(country);
-
-      console.log("country:", country, "year:", year, "trade:", trade);
-
-      if (country) {updateTreemap(country, year, trade); console.log("Slider updating treemap")};
-  }
-
-  /* ----------------------- TREEMAP PART -----------------------*/
-
-
-  function updateTreemap(selectedCountry, selectedYear, selectedTrade) {
-
-    // Remove previous treemap and title
-    d3.select("#treemap").selectAll("g").remove();
-    d3.select("#treemapdiv").select("h2").remove();
-
-    console.log(selectedCountry, selectedYear)
-
-    // Get a string for selected trade
-    if (document.getElementById('exports').checked) { var tradeString = "Exports"; }
-    else { var tradeString = "Imports"; }
-
-    treemapData = data[selectedCountry][selectedYear]
-
-    // If theres no data for selecter year country display so and break from function
-    if (data[selectedCountry][selectedYear] === undefined) {
-      d3.select("#treemapdiv").insert("h2", ":first-child")
-        .text("No data for " + countrycodesDict[selectedCountry] + " in " + selectedYear);
-      return;
-    }
-
-    // Display title with year, country, trade
-    d3.select("#treemapdiv").insert("h2", ":first-child")
-      .text(tradeString + " of " + countrycodesDict[selectedCountry] + " in " + selectedYear);
-
-    if (selectedTrade === imports) {
-        console.log("treemap for imports")
-
-        // Constructs a root node from the specified hierarchical data. The specified data must be an object representing the root node.
-        var root = d3.hierarchy(treemapData)
-            .sum(function(d) { return d.imports; });
-
-        treemap(root)
-
-        // console.log("tm'ed root", root)
-
-        var square = svgTreemap.selectAll("g")
-          .data(root.leaves()) //Join the data
-          .enter().append("g")
-            .attr("transform", function(d) { return "translate(" + d.x0 + "," + d.y0 + ")" }); 
-
-        square.append("rect")
-          .attr("class", "treemap-country")
-          .attr("id", function(d) { return d.data.country; })
-          .attr("width", function(d) { return d.x1 - d.x0; })
-          .attr("height", function(d) { return d.y1 - d.y0; })
-          .attr("fill", function(d) { return colorTreemap(d.data.imports); })
-          .on('mousemove', function(d) {
-            var mouse = d3.mouse( svgTreemap.node() ).map(function(d) { return parseInt(d); });
-            
-            tooltip.classed('hidden', false)
-                .attr('style', 'left:' + (mouse[0]) +'px; top:' + (mouse[1]) + 'px')
-                .html("<strong>" + countrycodesDict[d.data.country] + "</strong>" + "<br>" + format(d.data.imports) + " mystery units");
-          })
-          .on('mouseout', function() { tooltip.classed('hidden', true);});
-
-        square.append("clipPath")
-          .attr("id", function(d) { return "clip-" + d.data.country; })
-         .append("use")
-          .attr("xlink:href", function(d) { return "#" + d.data.country; });
-
-        // square.append("text")
-        //   .attr("clip-path", function(d) { return "url(#clip-" + d.data.country + ")"; })
-        //   .selectAll("tspan")
-        //     .data(function(d) { return d.data.country.split(/(?=[A-Z][^A-Z])/g); })
-        //       .enter().append("tspan")
-        //         .attr("x", 4)
-        //         .attr("y", function(d, i) { return 13 + i * 10; })
-        //         .style("z-index", 100)
-        //         .style("font-size", function(d) { return Math.max(20, 0.18 * (d.x1 - d.x0)) + 'px'; })
-        //         .text(function(d) { return countrycodesDict[d]; });
-
-        square.append("title")
-          .text(function(d) { return countrycodesDict[d.data.country] + "\n" + format(d.data.imports); })
-
-    } else {
-        console.log("treemap for exports", treemapData)
-
-        var root = d3.hierarchy(treemapData)
-            .sum(function(d) { return d.exports; });
-
-        treemap(root)
-
-        // console.log("tm'ed root", root)
-
-        var square = svgTreemap.selectAll("g")
-          .data(root.leaves()) // Join the data
-          .enter().append("g")
-            .attr("transform", function(d) { return "translate(" + d.x0 + "," + d.y0 + ")" }); 
-
-        square.append("rect")
-          .attr("class", "treemap-country")
-          .attr("id", function(d) { return d.data.country; })
-          .attr("width", function(d) { return d.x1 - d.x0; })
-          .attr("height", function(d) { return d.y1 - d.y0; })
-          .attr("fill", function(d) { return colorTreemap(d.data.exports); })
-          .on('mousemove', function(d) {
-            var mouse = d3.mouse( svgTreemap.node() ).map(function(d) { return parseInt(d); });
-            
-            tooltip.classed('hidden', false)
-                .attr('style', 'left:' + (mouse[0]) +'px; top:' + (mouse[1] + 710) + 'px')
-                .html("<strong>" + countrycodesDict[d.data.country] + "</strong>" + "<br>" + format(d.data.exports) + " mystery units");
-          })
-          .on('mouseout', function() { tooltip.classed('hidden', true);});
-  
-        square.append("clipPath")
-          .attr("id", function(d) { return "clip-" + d.data.country; })
-        .append("use")
-          .attr("xlink:href", function(d) { return "#" + d.data.country; });
-
-        // square.append("text")
-        //   .attr("clip-path", function(d) { return "url(#clip-" + d.data.country + ")"; })
-        //   .selectAll("tspan")
-        //     .data(function(d) { return d.data.country.split(/(?=[A-Z][^A-Z])/g); })
-        //       .enter().append("tspan")
-        //         .attr("x", 4)
-        //         .attr("y", function(d, i) { return 13 + i * 10; })
-        //         .style("z-index", 100)
-        //         .style("font-size", function(d) { return Math.max(20, 0.18 * (d.x1 - d.x0)) + 'px'; })
-        //         .text(function(d) { return countrycodesDict[d]; });
-
-        square.append("title")
-          .text(function(d) { return countrycodesDict[d.data.country] + "\n" + format(d.data.exports); });
-
-    }
-        // .style("font-size", function(d) {
-        //   // compute font size based on sqrt(area)
-        //   return Math.max(20, 0.18 * (d.x1 - d.x0)) + 'px'; });
-  }
-
   /*----------------------- MAP PART -----------------------*/
-
   // Get countries from map
   var countries = topojson.feature(world, world.objects.countries).features;
 
@@ -337,38 +149,26 @@ function ready(error, world, imports, exports, data) {
       .attr("d", path)
       .style("fill", function (d) {
             // Lookup country in dictionary with values
-            countryValue = dictCountries[d.id];
+            var countryValue = dictCountries[d.id];
             // If there is data for the country give a fill
-            if (countryValue)
-              return colorMap(countryValue);
+            if (countryValue) { return colorMap(countryValue) };
           })
       // Tooltip
-      .on('mousemove', function(d) {
-          var mouse = d3.mouse( svgMap.node() ).map(function(d) { return parseInt(d); });
-          
-          tooltip.classed('hidden', false)
-              .attr('style', 'left:' + (mouse[0] + 15) +'px; top:' + (mouse[1] + 20) + 'px')
-              .html("<strong>" + countrycodesDict[d.id] + "</strong>" + "<br>" + format(dictCountries[d.id] * 1000) + " bbl/day");
-              //var hasName = (dictCountries[d.id]) !== 'undefined') ? format(dictCountries[d.id] * 1000) :'No data';
-      })
-      .on('mouseout', function() { tooltip.classed('hidden', true);})
+      .on("mousemove", function(d) { showTooltip( d.id, dictCountries[d.id], "thousand bbl/day", svgMap); })       
+      .on("mouseout", function() { tooltip.classed("hidden", true);})
       .on("click", function() {
           country = this.id;
 
-          // color map again to erase previous red
-          updateMap(trade, year);
-
-          // Color clicked country red and draw matching treemap
-          colorSelectedCountry(country);
-
-          console.log("Clicked on country:", country, "year:", year, "trade:", trade)
-          updateTreemap(country, year, trade);
+          updateMap(trade, year, country);
+          updateTreemap(country, year);
+          treemapCountry = undefined;
+          clearBarchart()
+          // if (!(treemapCountry === undefined)) { updateBarchart(country, treemapCountry, year, tradeString)}
         });
     
   // Update map when toggle is switched or year is changed
-  function updateMap(selectedTrade, selectedYear) {
+  function updateMap(selectedTrade, selectedYear, selectedCountry) {
     // console.log("selectedYear", selectedYear)
-    
     // Empty the dictionary
     dictCountries = {}
 
@@ -385,46 +185,316 @@ function ready(error, world, imports, exports, data) {
         if (countryValue) { return colorMap(countryValue); };
       })
 
-    colorSelectedCountry(country)
+    // Color selected country red
+    d3.selectAll("#" + selectedCountry)
+      .style("fill", "#FF7976");
+  }
+
+  /*----------------------- YEAR SLIDER -----------------------*/
+  var xSlider = d3.scaleLinear()
+    .domain([1960, 2013])
+    .range([0, width])
+    .clamp(true);
+
+  var slider = svgSlider.append("g")
+    .attr("class", "slider")
+    .attr("transform", "translate(" + margin.left / 2 + "," + 100 / 2 + ")");
+
+  slider.append("line")
+    .attr("class", "track")
+    .attr("x1", xSlider.range()[0])
+    .attr("x2", xSlider.range()[1])
+  .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
+    .attr("class", "track-inset")
+  .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
+    .attr("class", "track-overlay")
+    .call(d3.drag()
+        .on("start.interrupt", function() { slider.interrupt(); })
+        .on("start drag", function() { updateSliderCircle(xSlider.invert(d3.event.x)) ; }));
+
+  slider.insert("g", ".track-overlay")
+      .attr("class", "ticks")
+      .attr("transform", "translate(0," + 18 + ")")
+    .selectAll("text")
+    .data(xSlider.ticks(18))
+    .enter().append("text")
+      .attr("x", xSlider)
+      .attr("text-anchor", "middle")
+      .text(function(d) { return d; });
+
+  var handle = slider.insert("circle", ".track-overlay")
+    .attr("id", "handle")
+    .attr("r", 7)
+    .attr("cx", xSlider(2013));
+
+  function updateSliderCircle(h) {
+      // Move the the circle
+      handle.attr("cx", xSlider(h));
+
+      year = parseInt(h);
+
+      if (document.getElementById("exports").checked) { trade = exports; tradeString = "Exports";}
+      else { trade = imports; tradeString = "Imports";}
+
+      updateMap(trade, year, country);
+
+      // If a country is selected in the map then update the map
+      if (country) {
+        updateTreemap(country, year); //console.log("Slider updating treemap")
+        // If a country is selected in the treemap update the barchart
+        if (treemapCountry) {
+          console.log("treemapCountry:", treemapCountry, "trade",tradeString);
+          updateBarchart(country, treemapCountry, year, tradeString);};
+      }
+  }
+
+  /* ----------------------- TREEMAP PART -----------------------*/
+  function updateTreemap(selectedCountry, selectedYear) {
+
+    // Remove previous treemap and title
+    d3.select("#treemap").selectAll("g").remove();
+    d3.select("#treemapdiv").select("h4").remove();
+    d3.select("#barchart").selectAll("g").remove();
+
+    // console.log(selectedCountry, selectedYear)
+
+    // Get a string for selected trade
+    if (document.getElementById("exports").checked) { var tradeString = "Exports"; }
+    else { var tradeString = "Imports"; }
+
+    var treemapData = data[selectedCountry][selectedYear];
+
+    // If theres no data for country in selected year display so then break from function
+    if (data[selectedCountry][selectedYear] === undefined) {
+      d3.select("#treemapdiv").insert("h4", ":first-child")
+        .text("No data for " + countrycodesDict[selectedCountry] + " in " + selectedYear);
+      return;
+    }
+
+    // Insert title with year, country, trade
+    d3.select("#treemapdiv").insert("h4", ":first-child")
+      .text(tradeString + " of " + countrycodesDict[selectedCountry] + " in " + selectedYear);
+
+  function drawTreemap(passedTrade) {
+
+    var root = d3.hierarchy(treemapData)
+        .sum(function(d) { return d[passedTrade]; });
+
+    treemap(root)
+
+    // console.log("tm'ed root", root);
+
+    var square = svgTreemap.selectAll("g")
+      .attr("transform", "translate(0," + margin.top / 2 + ")")
+      .data(root.leaves())
+      .enter().append("g")
+        .attr("transform", function(d) {
+          if (Number.isNaN(d.x0) || Number.isNaN(d.y0)) { return "translate(" + 0 + "," + 0 + ")";}
+          else {return "translate(" + d.x0 + "," + d.y0 + ")";}
+      }); 
+
+    // if d[passedTrade] !=== 0 {continue}
+    square.append("rect")
+      .attr("class", "treemap-country")
+      .attr("id", function(d) { return d.data.country; })
+      .attr("width", function(d) {
+        // console.log(d.data.country, "x1:", d.x1, "x0:", d.x0);
+        if ( Number.isNaN(d.x1) || Number.isNaN(d.x0) ) {return 0;}
+        else { return (d.x1 - d.x0) };
+      })
+      .attr("height", function(d) { 
+        // console.log(d.data.country,"y1:", d.y1, "y0:", d.y0); 
+        if ( Number.isNaN(d.y1) || Number.isNaN(d.y0) ) { return 0;}
+        else { return (d.y1 - d.y0) };
+      })
+      .attr("fill", function(d) { return colorTreemap(d.data[passedTrade]); })
+      .on("mousemove", function(d) { showTooltip(d.data.country, (d.data[passedTrade]/1000000), "million mystery units", d3.select("#treemap")) ; })
+      .on("mouseout", function() { tooltip.classed("hidden", true); })
+      .on("click", function() { updateBarchart(selectedCountry, this.id, year, tradeString); } ); 
+
+    square.append("clipPath")
+      .attr("id", function(d) { return "clip-" + d.data.country; })
+     .append("use")
+      .attr("xlink:href", function(d) { return "#" + d.data.country; });
+  }
+
+    if (tradeString === "Imports") {
+        console.log("treemap for imports")
+
+        drawTreemap("imports")
+    } else {
+        // console.log("treemap for exports", treemapData)
+        drawTreemap("exports")
+    }
+  }
+
+  /*----------------------- BARCHART PART -----------------------*/
+  function clearBarchart() {
+    d3.select("#barchartdiv").select("h4").remove();
+    d3.select("#barchart").selectAll("rect").remove();
+    d3.select("#barchart").selectAll("g").remove();
+  }
+
+  function updateBarchart(selectedCountry, clickedCountry, selectedYear, passedTrade) {
+    
+    clearBarchart()
+    // Clean up
+    updateMap(trade, year, country); // Clear selectedCountry in worldmap
+    updateTreemap(country, year); // Clear marked square in treemap
+
+    if (clickedCountry === undefined) {console.log(clickedCountry); console.log("cleaned up sofunction should end"); return;};
+
+    var barchartData = [],
+        barchartRange = [],
+        barPadding = 2;
+        bcWidth = +svgBarchart.attr("width") - margin.left - margin.right,
+        bcHeight = +svgBarchart.attr("height") - margin.top - margin.bottom;
+
+    treemapCountry = clickedCountry;
+
+    // Color clicked country in both treemap and worldmap
+    d3.selectAll("#" + treemapCountry)
+      .style("fill", "#FFE066");
+
+    // Make new array with data of past 10 years
+    for (lowerYear = selectedYear - 9 ; lowerYear <= selectedYear ; lowerYear++) {
+      var dataPast = data[selectedCountry][lowerYear];
+
+      if (dataPast) { 
+        dataPast.children.forEach(function(element) {
+            if (element.country === treemapCountry) {
+                if (passedTrade === "Imports") {
+                    barchartData.push({"year": lowerYear, "data": element.imports});
+                    barchartRange.push(element.imports);
+                }
+                else {
+                    barchartData.push({"year": lowerYear, "data": element.exports});
+                    barchartRange.push(element.exports);
+                }; 
+            }
+        });
+      }
+    }
+
+    // If there is no data available remove the title
+    if (barchartData.length === 0) {d3.select("#barchartdiv").select("h4").remove(); return;}
+    else if (barchartData.length === 1) {d3.select("#barchartdiv").select("h4").remove(); return;}
+
+    var xBarchart = d3.scaleBand().rangeRound([0, bcWidth]).padding(0.1)
+          .domain(barchartData.map( function(d) { return(d.year); })),
+        yBarchart = d3.scaleLinear()
+          .rangeRound([bcHeight, 0])
+          .domain([0, d3.max(barchartRange)]);
+
+    // Append new title for barchart
+    if (passedTrade === "Imports") {
+        d3.select("#barchartdiv").insert("h4", ":first-child")
+          .text("History of " + passedTrade + " of " + countrycodesDict[selectedCountry] + " from " + countrycodesDict[treemapCountry]);
+    } else if (passedTrade === "Exports") {
+        d3.select("#barchartdiv").insert("h4", ":first-child")
+          .text("History of " + passedTrade + " of " + countrycodesDict[selectedCountry] + " to " + countrycodesDict[treemapCountry]);      
+    }
+
+    var g = svgBarchart.append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top / 2 + ")");
+
+    // x Axis
+    g.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + bcWidth + ")")
+      .call(d3.axisBottom(xBarchart))
+      .append("text")
+        .attr("y", 7)
+        .attr("dy", "0.71em")
+        .attr("text-anchor", "start")
+        .text("Year");
+
+    // y Axis
+    g.append("g")
+        .attr("class", "axis axis--y")
+        .call(d3.axisLeft(yBarchart)
+          .ticks(10)
+          .tickFormat(d3.format(".3s")))
+      .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", "0.71em")
+        .attr("text-anchor", "end")
+        .text("Mystery Units");
+
+    // Bars
+    g.selectAll("rect")
+      .data(barchartData)
+       .enter().append("rect")
+        .attr("class", "bar")
+        .attr("x", function(d) { return xBarchart(d.year); })
+        .attr("y", function(d) { return yBarchart(d.data); })
+        .attr("width", xBarchart.bandwidth() )
+        .attr("height", function(d) { return bcHeight - yBarchart(d.data); })
+        .style("fill", function(d) { return colorTreemap(d.data) });  
   }
 
   /*------ MAP LEGEND ----*/
-//Append a defs (for definition) element to your SVG
-var defs = svgMap.append("defs");
+  //Append a defs (for definition) element to your SVG
+  var defs = svgMap.append("defs");
 
-var linearGradient = defs.append("linearGradient")
-    .attr("id", "linear-gradient");
+  var linearGradient = defs.append("linearGradient")
+      .attr("id", "linear-gradient");
 
-//Append multiple color stops by using D3's data/enter step
-linearGradient.selectAll("stop") 
-    .data( colorMap.range() )                  
-    .enter().append("stop")
-    .attr("offset", function(d,i) { return i / (colorMap.range().length - 1); })
-    .attr("stop-color", function(d) { return d; });
+  //Append multiple color stops by using D3"s data/enter step
+  linearGradient.selectAll("stop") 
+      .data( colorMap.range() )                  
+      .enter().append("stop")
+        .attr("offset", function(d,i) { return i / (colorMap.range().length - 1); })
+        .attr("stop-color", function(d) { return d; });
 
-//Append a linearGradient element to the defs and give it a unique id
-svgMap.append("rect")
-  .attr("id", "key")
-  .attr("width", 300)
-  .attr("height", 20)
-  .style("fill", "url(#linear-gradient)");
+  //Append a linearGradient element to the defs and give it a unique id
+  svgMap.append("rect")
+    .attr("id", "key")
+    .attr("width", 300)
+    .attr("height", 20)
+    .style("fill", "url(#linear-gradient)");
 
-d3.select("#key").append("text")
-    .attr("class", "caption")
-    .attr("x", x.range()[0])
-    .attr("y", -6)
-    .attr("fill", "#000")
-    .attr("text-anchor", "start")
-    .attr("font-weight", "bold")
-    .text("Population per square mile");
+  xLegend = d3.scaleLinear()
+    .domain([1960, 2013])
+    .range([0, 300])
+    .clamp(true);
 
-d3.select("#key").call(d3.axisBottom(x)
-    .tickSize(13)
-    .tickValues(colorMap.domain()))
-  .select(".domain")
-    .remove();
+  /* Text onder key x : [0, 300] */
+  d3.select("#key").append("text")
+     .attr("class", "caption")
+     .attr("x", 50)
+     .attr("y", -25)
+     .attr("fill", "#000")
+     .attr("text-anchor", "start")
+     .attr("font-weight", "bold")
+     .text("Thousand barrels p/day");
 
+  d3.select("#key").call(d3.axisBottom(xLegend)
+      .tickSize(10)
+      .tickValues(colorMap.domain() ) )
+    .select(".domain")
+      .remove();
 
+  /*----------------------- TOOLTIP FUNCTIE -----------------------*/
+  function showTooltip(passedCountry, passedData, unitString, passedSVG) {
+    // console.log(passedSVG);
+
+    var mouse = d3.mouse(passedSVG.node()).map(function(d) {return parseInt(d);});
+
+    // var offsetTop;
+    // if (passedSVG == 20) {
+    //   offsetTop = 20
+    // }
+    // else {
+    //   offsetTop = 820
+    // }
+
+    tooltip.classed("hidden", false)
+      .attr("style", "left: 15%; top: 15%")
+      // .attr('style', 'left:' + (mouse[0] + 5) +'%; top:' + (mouse[1] - ) + '%')
+      .html("<strong>" + countrycodesDict[passedCountry] + "</strong>" + "<br>" + format(passedData) + " " + unitString );
+  }
 }
 
 </script>

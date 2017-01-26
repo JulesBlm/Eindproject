@@ -45,7 +45,7 @@ body {
   stroke-linejoin: round;
 }
 
-.country:hover, .treemap-country:hover {
+.country:hover, .treemap-country:hover, .bar:hover{
   opacity: 0.5;
 }
 
@@ -64,7 +64,12 @@ div.tooltip {
   position: absolute;
 }
 
-/* Treemap */
-tspan {
-  font-color: #000;
+svg .axis path, .axis line {
+  fill            : none;
+  stroke          : #000;
+  shape-rendering : crispEdges;
+}
+
+svg .x.axis path {
+  display : none;
 }
