@@ -86,7 +86,7 @@ var path = d3.geoPath()
   .projection(projection);
 
 var colorMap = d3.scaleLinear()
-  .domain([100, 1200])
+  .domain([100, 1500])
   .range(d3.schemeBlues[5]);
 
 var dictCountries = {};
@@ -177,6 +177,7 @@ function ready(error, world, imports, exports, data) {
 
     // Recolor the map
     d3.selectAll(".country")
+      .transition()
       .style("fill", function (d) {
         // Lookup country in dictionary with values
         var countryValue = dictCountries[d.id];
@@ -187,6 +188,7 @@ function ready(error, world, imports, exports, data) {
 
     // Color selected country red
     d3.selectAll("#" + selectedCountry)
+      .transition()
       .style("fill", "#FF7976");
   }
 
@@ -243,8 +245,8 @@ function ready(error, world, imports, exports, data) {
         updateTreemap(country, year); //console.log("Slider updating treemap")
         // If a country is selected in the treemap update the barchart
         if (treemapCountry) {
-          console.log("treemapCountry:", treemapCountry, "trade",tradeString);
-          updateBarchart(country, treemapCountry, year, tradeString);};
+          // console.log("treemapCountry:", treemapCountry, "trade",tradeString);
+          updateBarchart(country, treemapCountry, year, tradeString, "y");};
       }
   }
 
@@ -254,9 +256,7 @@ function ready(error, world, imports, exports, data) {
     // Remove previous treemap and title
     d3.select("#treemap").selectAll("g").remove();
     d3.select("#treemapdiv").select("h4").remove();
-    d3.select("#barchart").selectAll("g").remove();
-
-    // console.log(selectedCountry, selectedYear)
+    // d3.select("#barchart").selectAll("g").remove();
 
     // Get a string for selected trade
     if (document.getElementById("exports").checked) { var tradeString = "Exports"; }
@@ -275,51 +275,53 @@ function ready(error, world, imports, exports, data) {
     d3.select("#treemapdiv").insert("h4", ":first-child")
       .text(tradeString + " of " + countrycodesDict[selectedCountry] + " in " + selectedYear);
 
-  function drawTreemap(passedTrade) {
+    function drawTreemap(passedTrade) {
 
-    var root = d3.hierarchy(treemapData)
-        .sum(function(d) { return d[passedTrade]; });
+      var root = d3.hierarchy(treemapData)
+          .sum(function(d) { return d[passedTrade]; });
 
-    treemap(root)
+      var t = d3.transition()
+        .duration(300);
 
-    // console.log("tm'ed root", root);
+      treemap(root)
 
-    var square = svgTreemap.selectAll("g")
-      .attr("transform", "translate(0," + margin.top / 2 + ")")
-      .data(root.leaves())
-      .enter().append("g")
-        .attr("transform", function(d) {
-          if (Number.isNaN(d.x0) || Number.isNaN(d.y0)) { return "translate(" + 0 + "," + 0 + ")";}
-          else {return "translate(" + d.x0 + "," + d.y0 + ")";}
-      }); 
+      // console.log("tm'ed root", root);
 
-    // if d[passedTrade] !=== 0 {continue}
-    square.append("rect")
-      .attr("class", "treemap-country")
-      .attr("id", function(d) { return d.data.country; })
-      .attr("width", function(d) {
-        // console.log(d.data.country, "x1:", d.x1, "x0:", d.x0);
-        if ( Number.isNaN(d.x1) || Number.isNaN(d.x0) ) {return 0;}
-        else { return (d.x1 - d.x0) };
-      })
-      .attr("height", function(d) { 
-        // console.log(d.data.country,"y1:", d.y1, "y0:", d.y0); 
-        if ( Number.isNaN(d.y1) || Number.isNaN(d.y0) ) { return 0;}
-        else { return (d.y1 - d.y0) };
-      })
-      .attr("fill", function(d) { return colorTreemap(d.data[passedTrade]); })
-      .on("mousemove", function(d) { showTooltip(d.data.country, (d.data[passedTrade]/1000000), "million mystery units", d3.select("#treemap")) ; })
-      .on("mouseout", function() { tooltip.classed("hidden", true); })
-      .on("click", function() { updateBarchart(selectedCountry, this.id, year, tradeString); } ); 
+      var square = svgTreemap.selectAll("g")
+        .attr("transform", "translate(0," + margin.top / 2 + ")")
+        .data(root.leaves())
+        .enter().append("g")
+          .attr("transform", function(d) {
+            if (Number.isNaN(d.x0) || Number.isNaN(d.y0)) {}
+            else {return "translate(" + d.x0 + "," + d.y0 + ")";}
+        }); 
 
-    square.append("clipPath")
-      .attr("id", function(d) { return "clip-" + d.data.country; })
-     .append("use")
-      .attr("xlink:href", function(d) { return "#" + d.data.country; });
-  }
+      square.append("rect")
+        .attr("class", "treemap-country")
+        .attr("id", function(d) { return d.data.country; })
+        .attr("width", function(d) {
+          // console.log(d.data.country, "x1:", d.x1, "x0:", d.x0);
+          if ( Number.isNaN(d.x1) || Number.isNaN(d.x0) ) {}
+          else { return (d.x1 - d.x0) };
+        })
+        .attr("height", function(d) { 
+          // console.log(d.data.country,"y1:", d.y1, "y0:", d.y0); 
+          if ( Number.isNaN(d.y1) || Number.isNaN(d.y0) ) {}
+          else { return (d.y1 - d.y0) };
+        })
+        .attr("fill", function(d) { return colorTreemap(d.data[passedTrade]); })
+        .on("mousemove", function(d) { showTooltip(d.data.country, (d.data[passedTrade]/1000000), "million mystery units", d3.select("#treemap")) ; })
+        .on("mouseout", function() { tooltip.classed("hidden", true); })
+        .on("click", function() { updateBarchart(selectedCountry, this.id, year, tradeString); } ); 
+
+      square.append("clipPath")
+        .attr("id", function(d) { return "clip-" + d.data.country; })
+       .append("use")
+        .attr("xlink:href", function(d) { return "#" + d.data.country; });
+    }
 
     if (tradeString === "Imports") {
-        console.log("treemap for imports")
+        // console.log("treemap for imports")
 
         drawTreemap("imports")
     } else {
@@ -332,21 +334,23 @@ function ready(error, world, imports, exports, data) {
   function clearBarchart() {
     d3.select("#barchartdiv").select("h4").remove();
     d3.select("#barchart").selectAll("rect").remove();
-    d3.select("#barchart").selectAll("g").remove();
+    d3.select("#barchart").selectAll(".axis").remove();
   }
 
-  function updateBarchart(selectedCountry, clickedCountry, selectedYear, passedTrade) {
+  function updateBarchart(selectedCountry, clickedCountry, selectedYear, passedTrade, transitionOption) {
     
-    clearBarchart()
+    // Remove old title and axis
+    d3.select("#barchartdiv").select("h4").remove();
+    d3.select("#barchart").selectAll(".axis").remove();
     // Clean up
     updateMap(trade, year, country); // Clear selectedCountry in worldmap
     updateTreemap(country, year); // Clear marked square in treemap
 
-    if (clickedCountry === undefined) {console.log(clickedCountry); console.log("cleaned up sofunction should end"); return;};
+    // If clickedCountry is not defined yet break from function
+    if (clickedCountry === undefined) {return;};
 
     var barchartData = [],
         barchartRange = [],
-        barPadding = 2;
         bcWidth = +svgBarchart.attr("width") - margin.left - margin.right,
         bcHeight = +svgBarchart.attr("height") - margin.top - margin.bottom;
 
@@ -354,34 +358,35 @@ function ready(error, world, imports, exports, data) {
 
     // Color clicked country in both treemap and worldmap
     d3.selectAll("#" + treemapCountry)
+      .transition()
       .style("fill", "#FFE066");
 
-    // Make new array with data of past 10 years
-    for (lowerYear = selectedYear - 9 ; lowerYear <= selectedYear ; lowerYear++) {
+    // Construct new array with data of past 10 years
+    for (var lowerYear = selectedYear - 9 ; lowerYear <= selectedYear ; lowerYear++) {
       var dataPast = data[selectedCountry][lowerYear];
 
       if (dataPast) { 
         dataPast.children.forEach(function(element) {
-            if (element.country === treemapCountry) {
-                if (passedTrade === "Imports") {
-                    barchartData.push({"year": lowerYear, "data": element.imports});
-                    barchartRange.push(element.imports);
-                }
-                else {
-                    barchartData.push({"year": lowerYear, "data": element.exports});
-                    barchartRange.push(element.exports);
-                }; 
+          if (element.country === treemapCountry) {
+            if (passedTrade === "Imports") {
+                barchartData.push({"year": lowerYear, "data": element.imports});
+                barchartRange.push(element.imports);
             }
+            else {
+                barchartData.push({"year": lowerYear, "data": element.exports});
+                barchartRange.push(element.exports);
+            };
+          }
         });
       }
     }
 
     // If there is no data available remove the title
-    if (barchartData.length === 0) {d3.select("#barchartdiv").select("h4").remove(); return;}
+    if (barchartData.length === 0) {clearBarchart(); return;}
     else if (barchartData.length === 1) {d3.select("#barchartdiv").select("h4").remove(); return;}
 
     var xBarchart = d3.scaleBand().rangeRound([0, bcWidth]).padding(0.1)
-          .domain(barchartData.map( function(d) { return(d.year); })),
+          .domain(barchartData.map(function(d) {return(d.year);})),
         yBarchart = d3.scaleLinear()
           .rangeRound([bcHeight, 0])
           .domain([0, d3.max(barchartRange)]);
@@ -395,8 +400,15 @@ function ready(error, world, imports, exports, data) {
           .text("History of " + passedTrade + " of " + countrycodesDict[selectedCountry] + " to " + countrycodesDict[treemapCountry]);      
     }
 
-    var g = svgBarchart.append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top / 2 + ")");
+    if (transitionOption === "y") {
+      // console.log("transition");
+    }
+    else {
+      // console.log("pass");
+      d3.select("#barchart").selectAll("rect").remove();
+      g = svgBarchart.append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top / 2 + ")");
+    }
 
     // x Axis
     g.append("g")
@@ -422,57 +434,110 @@ function ready(error, world, imports, exports, data) {
         .attr("text-anchor", "end")
         .text("Mystery Units");
 
-    // Bars
-    g.selectAll("rect")
-      .data(barchartData)
-       .enter().append("rect")
+    var bars = g.selectAll("rect")
+      .data(barchartData);
+
+    // Remove old
+    bars.exit()
+      .transition()
+        .duration(300)
+      // .attr("y", function(d) { return yBarchart(d.data); })
+      .style('fill-opacity', 1e-6)
+      .remove();
+
+    // The new enter set
+    bars.enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return xBarchart(d.year); })
+      .attr("y", function(d) { return yBarchart(d.data); })
+      .attr("width", xBarchart.bandwidth() )
+      .attr("height", function(d) { return bcHeight - yBarchart(d.data); })
+      .style("fill", function(d) { return colorTreemap(d.data) });
+
+    // the "UPDATE" set:
+    bars.transition()
+      .duration(300)
         .attr("class", "bar")
         .attr("x", function(d) { return xBarchart(d.year); })
         .attr("y", function(d) { return yBarchart(d.data); })
         .attr("width", xBarchart.bandwidth() )
         .attr("height", function(d) { return bcHeight - yBarchart(d.data); })
-        .style("fill", function(d) { return colorTreemap(d.data) });  
+        .style("fill", function(d) { return colorTreemap(d.data) });
+
+//---------------
+  // function transitionBarchart() {
+
+  //   var bars = d3.selectAll(".bar")
+  //     .data(barchartData);
+
+  //   console.log(bars)
+
+  //   bars.exit()
+  //     .transition()
+  //       .duration(300)
+  //     .attr("y", function(d) { return yBarchart(d.data); })
+  //     .style('fill-opacity', 1e-6)
+  //     .remove();
+
+  //   // data that needs DOM = enter() (a set/selection, not an event!)
+  //   bars.enter().append("rect")
+  //     .attr("class", "bar")
+  //     .attr("x", function(d) { return xBarchart(d.year); })
+  //     .attr("y", function(d) { return yBarchart(d.data); })
+  //     .attr("width", xBarchart.bandwidth() )
+  //     .attr("height", function(d) { return bcHeight - yBarchart(d.data); })
+  //     .style("fill", function(d) { return colorTreemap(d.data) });
+
+  //   // the "UPDATE" set:
+  //   bars.transition().duration(300)
+  //     .attr("x", function(d) { return xBarchart(d.year); })
+  //     .attr("y", function(d) { return yBarchart(d.data); })
+  //     .attr("width", xBarchart.bandwidth() )
+  //     .attr("height", function(d) { return bcHeight - yBarchart(d.data); })
+  //     .style("fill", function(d) { return colorTreemap(d.data) });
+  //   }
+
   }
 
   /*------ MAP LEGEND ----*/
-  //Append a defs (for definition) element to your SVG
-  var defs = svgMap.append("defs");
+  var defs = svgMap.append("g")
+  .attr("transform", "translate(" + margin.left /6 + "," + margin.top / 4 + ")");
 
   var linearGradient = defs.append("linearGradient")
       .attr("id", "linear-gradient");
 
-  //Append multiple color stops by using D3"s data/enter step
+  // Append multiple color stops by using D3"s data/enter step
   linearGradient.selectAll("stop") 
       .data( colorMap.range() )                  
       .enter().append("stop")
         .attr("offset", function(d,i) { return i / (colorMap.range().length - 1); })
         .attr("stop-color", function(d) { return d; });
 
-  //Append a linearGradient element to the defs and give it a unique id
-  svgMap.append("rect")
+  // Append a linearGradient element to the defs and give it a unique id
+  defs.append("rect")
+    // .attr("x", 5)
     .attr("id", "key")
     .attr("width", 300)
     .attr("height", 20)
     .style("fill", "url(#linear-gradient)");
 
   xLegend = d3.scaleLinear()
-    .domain([1960, 2013])
+    .domain([0, 5000])
     .range([0, 300])
     .clamp(true);
 
   /* Text onder key x : [0, 300] */
-  d3.select("#key").append("text")
+  defs.append("text")
      .attr("class", "caption")
-     .attr("x", 50)
-     .attr("y", -25)
+     .attr("x", 210)
+     .attr("y", 40)
      .attr("fill", "#000")
      .attr("text-anchor", "start")
-     .attr("font-weight", "bold")
      .text("Thousand barrels p/day");
 
-  d3.select("#key").call(d3.axisBottom(xLegend)
-      .tickSize(10)
-      .tickValues(colorMap.domain() ) )
+  defs.call(d3.axisBottom(xLegend)
+      .tickSize(20))
+      // .tickValues(colorMap.domain() ) )
     .select(".domain")
       .remove();
 

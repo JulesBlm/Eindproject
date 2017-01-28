@@ -27,7 +27,7 @@ body {
 .track-overlay {
   pointer-events: stroke;
   stroke-width: 50px;
-  cursor: crosshair;
+  cursor: text;
 }
 
 #handle {
