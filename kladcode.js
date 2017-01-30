@@ -93,9 +93,7 @@ function transitionTreemap/(selectedYear) {
     .on("mouseout", function() { tooltip.classed("hidden", true); })
     .on("click", function() { updateBarchart(selectedCountry, this.id, year, tradeString); } ); 
 
-
-  square.transition()
-      .duration(300)
+  square.transition(t)
     .attr("class", "treemap-country")
     .attr("id", function(d) { return d.data.country; })
     .attr("width", function(d) {
