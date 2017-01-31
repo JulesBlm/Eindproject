@@ -1,7 +1,8 @@
 var width = 1000,
     height = 600,
     margin = {top: 40, right: 40, bottom: 40, left: 40}
-    format = d3.format(",d");
+    format = d3.format(",d")
+    format2 = d3.format(".5s");
 
 var svgMap = d3.select("#map").append("svg")
   .attr("id", "worldMap")
@@ -77,25 +78,6 @@ function ready(error, world, imports, exports, data) {
 
   updateMap(trade, year)
 
-  /* ----------------------- RADIO BUTTON TOGGLE -----------------------*/
-  // Select import or export with radio button
-  var inputElems = d3.selectAll("input")
-    .on("change", function() {
-      var inputValue = this.value;
-
-      if (inputValue === "imports") {trade = imports;}
-      else {trade = exports;}
-
-      updateMap(trade, year, country)
-
-      // If a country is clicked in map update the treemap
-      if (country !== undefined) {
-        updateTreemap(country, year);
-        // If a country is clicked in the treemap clear the barchart
-        if (treemapCountry !== undefined) {clearBarchart();}
-      }
-   })
-
   /*----------------------- MAP PART -----------------------*/
   // Get country lines from map
   var countries = topojson.feature(world, world.objects.countries).features;
@@ -115,8 +97,6 @@ function ready(error, world, imports, exports, data) {
          })
       // Tooltip var voteable = (age < 18) ? "Too young":"Old enough";
       .on("mousemove", function(d) {
-          // var exists = (dictCountries[d.id] !== undefined) ? dictCountries[d.id]:;
-
           if (dictCountries[d.id]) {showTooltip(d.id, dictCountries[d.id], "thousand bbl/day");}
           else {showTooltip(d.id, 0, ": Insufficient data");}
       })       
@@ -130,6 +110,25 @@ function ready(error, world, imports, exports, data) {
           treemapCountry = undefined;
           clearBarchart();
        });
+
+  /* ----------------------- RADIO BUTTON TOGGLE -----------------------*/
+  // Select import or export with radio button
+  var inputElems = d3.selectAll("input")
+    .on("change", function() {
+      var inputValue = this.value;
+
+      if (inputValue === "imports") {trade = imports;}
+      else {trade = exports;}
+
+      updateMap(trade, year, country)
+
+      // If a country is clicked in map update the treemap
+      if (country !== undefined) {
+        updateTreemap(country, year);
+        // If a country is clicked in the treemap clear the barchart
+        if (treemapCountry !== undefined) {clearBarchart();}
+      }
+   })
     
   // Update the map when toggle is switched or year is changed
   function updateMap(selectedTrade, selectedYear, selectedCountry) {
@@ -209,21 +208,18 @@ function ready(error, world, imports, exports, data) {
         updateTreemap(country, year);
         // If a country is selected in the treemap update the barchart
         if (treemapCountry) {
-          // console.log("treemapCountry:", treemapCountry, "trade",tradeString);
           updateBarchart(country, treemapCountry, year, tradeString, "y");};
      }
  }
 
   /* ----------------------- TREEMAP PART -----------------------*/
   function updateTreemap(selectedCountry, selectedYear) {
-
-    console.log(selectedCountry)
-    if (selectedCountry === "ATA" || selectedCountry === "ESH" || selectedCountry === "-99") {return;}
-
     // Remove previous treemap and title
     d3.select("#treemap").selectAll("g").remove();
     d3.select("#treemapdiv").select("h4").remove();
-    // d3.select("#barchart").selectAll("g").remove();
+
+    // Break if Antarctica, Westernsahara or Puntland is clicked bc no data exists for these.
+    if (selectedCountry === "ATA" || selectedCountry === "ESH" || selectedCountry === "PUNT") {return;}
 
     // Get a string for selected trade
     if (document.getElementById("exports").checked) {var tradeString = "exports";}
@@ -271,7 +267,7 @@ function ready(error, world, imports, exports, data) {
           else {return (d.y1 - d.y0)};
        })
         .attr("fill", function(d) {return colorTreemap(d.data[passedTrade]);})
-        .on("mousemove", function(d) {showTooltip(d.data.country, (d.data[passedTrade]/1000000), "million mystery units") ;})
+        .on("mousemove", function(d) {showTooltip(d.data.country, (d.data[passedTrade]), "kg") ;})
         .on("mouseout", function() {tooltip.classed("hidden", true);})
         .on("click", function() {updateBarchart(selectedCountry, this.id, year, tradeString);} ); 
 
@@ -392,7 +388,7 @@ function ready(error, world, imports, exports, data) {
         .attr("y", 6)
         .attr("dy", "0.71em")
         .attr("text-anchor", "end")
-        .text("Mystery Units");
+        .text("Kilogram");
 
     var bars = g.selectAll("rect")
       .data(barchartData);
@@ -411,7 +407,13 @@ function ready(error, world, imports, exports, data) {
       .attr("y", function(d) {return yBarchart(d.data);})
       .attr("width", xBarchart.bandwidth() )
       .attr("height", function(d) {return bcHeight - yBarchart(d.data);})
-      .attr("fill", function(d) {return colorTreemap(d.data)});
+      .attr("fill", function(d) {return colorTreemap(d.data);})
+      .on("mousemove", function(d) {
+        tooltip.classed('hidden', false)
+          .attr("style", "left:" + (d3.event.pageX + 5) + "px; top:" + (d3.event.pageY - 40) + "px")
+          .html("<strong>"format2(d.data) + " kg");
+      })
+      .on("mouseout", function() {tooltip.classed("hidden", true);});
 
     // the 'update' set:
     bars.transition()
@@ -433,7 +435,7 @@ function ready(error, world, imports, exports, data) {
 
   // Append multiple color stops by using D3"s data/enter step
   linearGradient.selectAll("stop") 
-      .data( colorMap.range() )                  
+      .data(colorMap.range())                  
       .enter().append("stop")
         .attr("offset", function(d,i) {return i / (colorMap.range().length - 1);})
         .attr("stop-color", function(d) {return d;});
@@ -467,11 +469,9 @@ function ready(error, world, imports, exports, data) {
 
   /*----------------------- TOOLTIP FUNCTIE -----------------------*/
   function showTooltip(passedCountry, passedData, unitString) {
-    var mouse = d3.mouse(svgMap.node()).map(function(d) {return parseInt(d);});
 
     tooltip.classed("hidden", false)
-      .attr("style", "left: 15%; top: 15%")
-      .attr("style", "left:" + (mouse[0] + 5) + "px; top:" + (d3.event.pageY - 70) + "px")
+      .attr("style", "left:" + (d3.event.pageX + 5) + "px; top:" + (d3.event.pageY - 70) + "px")
       .html("<strong>" + countrycodesDict[passedCountry] + "</strong>" + "<br>" + format(passedData) + " " + unitString );
  }
 }
