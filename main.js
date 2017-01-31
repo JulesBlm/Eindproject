@@ -290,8 +290,7 @@ function ready(error, world, imports, exports, data) {
     }
  }
 
-  /*----------------------- BARCHART PART -----------------------*/
-  function clearBarchart() {
+x  function clearBarchart() {
     d3.select("#barchartdiv").select("h4").remove();
     d3.select("#barchart").selectAll("rect").remove();
     d3.select("#barchart").selectAll(".axis").remove();
@@ -374,7 +373,8 @@ function ready(error, world, imports, exports, data) {
       .append("text")
         .attr("y", 7)
         .attr("dy", "0.71em")
-        .attr("text-anchor", "start")
+        .style("fill","black")
+        .style("text-anchor", "end")
         .text("Year");
 
     // y Axis
@@ -387,7 +387,8 @@ function ready(error, world, imports, exports, data) {
         .attr("transform", "rotate(-90)")
         .attr("y", 6)
         .attr("dy", "0.71em")
-        .attr("text-anchor", "end")
+        .style("fill","black")
+        .style("text-anchor", "end")
         .text("Kilogram");
 
     var bars = g.selectAll("rect")
@@ -411,7 +412,7 @@ function ready(error, world, imports, exports, data) {
       .on("mousemove", function(d) {
         tooltip.classed('hidden', false)
           .attr("style", "left:" + (d3.event.pageX + 5) + "px; top:" + (d3.event.pageY - 40) + "px")
-          .html("<strong>"format2(d.data) + " kg");
+          .html("<strong>" + d.year + "</strong>" + "</br>" + format2(d.data) + " kg");
       })
       .on("mouseout", function() {tooltip.classed("hidden", true);});
 
