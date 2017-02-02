@@ -44,8 +44,6 @@ Treemaps
 
 Barchart
 
-## Technical problems or limitations that could arise during development and what possibilities you have to overcome these
-
 ## A review of similar applications or visualizations in terms of features and technical aspects (what do they offer? how have they implemented it?)
 
 The MIT Media atlas http://atlas.media.mit.edu/en/visualize/tree_map/hs92/export/bgr/all/show/2014/ has a similar treemap only for all exports of a nation not just crude oil.
