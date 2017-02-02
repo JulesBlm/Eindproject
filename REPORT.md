@@ -1,13 +1,3 @@
-I have adapted code from the following examples:
-
-https://bl.ocks.org/mbostock/6452972 [Drag slider]
-
-https://bl.ocks.org/mbostock/4063582 [Treemap]
-
-http://blockbuilder.org/john-guerra/f22abc69555df8558b7051bb8ec2ee79 [Choropleth]
-
-https://bl.ocks.org/RandomEtc/cff3610e7dd47bef2d01 [Barchart transitions]
-
 ## Clearly describe the technical design: how is the functionality implemented in your code?
 
 ### High level overview, which helps us navigate and understand the total of your code (which components are there?). Second, go into detail, and describe the modules/classes and how they relate.
@@ -27,8 +17,25 @@ A function updateTreemap that constructs new appropriate data for the treemap an
 
 #### Detailed 
 
+
+
 ## Clearly describe challenges that your have met during development. Document all important changes that your have made with regard to your design document (from the PROCESS.md). Here, we can see how much you have learned in the past month.
 
+The d3.treemap function call for a specific format of JSON
+
+The d3 treemap squarified tiling method produced some pretty ugly treemaps. Contrary to what it's name suggest the rectangles drawn weren't square at all and often had long thin shapes. I changed the tiling method to d3.binary which did produce nice square rectangles. Unfortunately the binary tiling method couldnot handle values of zero. After painstakingly printing all the output I was able to write satifying error handling.
+
+At first the plan was to use a line graph instead of a barchart for the third linked view.
 
 ## Defend your decisions by writing an argument of a most a single paragraph. Why was it good to do it different than you thought before? Are there trade-offs for your current solution? In an ideal world, given much more time, would you choose another solution?
-At first the plan was to use a line graph instead of a barchart for the third linked view. I changed it to barchart since the data is missing in some years for some countries and with a line chart this can look like a sharp decrease in the previous year and a large increase for the next year. A barchart better reflects that data is missing and is also more useful if there is data for only a few years instead of the regular 10 years.
+
+At first the plan was to use a line graph instead of a barchart for the third linked view. I changed it to barchart since the data is missing in some years for some countries and with a line chart this can look like a sharp decrease in the previous year and a large increase for the next year. A barchart better reflects that data is missing and is also more useful if there is data for only a few years instead of the regular 10 years. 
+
+## Acknowledgments
+
+I have adapted code from the following examples:
+
+https://bl.ocks.org/mbostock/6452972 [Drag slider]
+https://bl.ocks.org/mbostock/4063582 [Treemap]
+http://blockbuilder.org/john-guerra/f22abc69555df8558b7051bb8ec2ee79 [Choropleth]
+https://bl.ocks.org/RandomEtc/cff3610e7dd47bef2d01 [Barchart transitions]

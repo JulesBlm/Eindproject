@@ -7,7 +7,7 @@ function updateMap() {
   trade[year].forEach(function (d) {dictCountries[d.country] = d.value;});
 
   // Recolor the map
-  d3.selectAll(".country")
+  svgMap.selectAll(".country")
     .transition()
     .style("fill", function (d) {
       // Lookup country in dictionary with values
@@ -18,7 +18,7 @@ function updateMap() {
    })
 
   // Color selected country red
-  d3.selectAll("#" + country)
+  svgMap.selectAll("#" + country)
     .transition()
     .style("fill", "#FF7976");
 }

@@ -116,8 +116,8 @@ function ready(error, world, imports, exports, data) {
     .on("change", function() {
       var inputValue = this.value;
 
-      if (inputValue === "imports") {trade = imports;}
-      else {trade = exports;}
+      if (inputValue === "imports") {trade = imports; tradeString = "imports";}
+      else {trade = exports; tradeString = "exports";}
 
       updateMap()
 
@@ -207,12 +207,13 @@ function ready(error, world, imports, exports, data) {
     .attr("height", 20)
     .attr("fill", "url(#linear-gradient)");
 
+  // Legend numbers
   xLegend = d3.scaleLinear()
     .domain([0, 5000])
     .range([0, 300])
     .clamp(true);
 
-  /* Text onder key x : [0, 300] */
+  // Text below legend
   defs.append("text")
      .attr("class", "caption")
      .attr("x", 210)
