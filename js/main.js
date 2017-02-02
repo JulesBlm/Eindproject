@@ -1,5 +1,5 @@
 var width = 1000,
-    height = 600,
+    height = 550,
     margin = {top: 40, right: 40, bottom: 40, left: 40}
     format = d3.format(",d")
     format2 = d3.format(".5s");
@@ -101,6 +101,7 @@ function ready(error, world, imports, exports, data) {
       })       
       .on("mouseout", function() {tooltip.classed("hidden", true);})
       .on("click", function() {
+          d3.select("#instruction").remove();
           country = this.id;
 
           // Update map, make new treemap and remove previous barchart

@@ -43,11 +43,12 @@
       .attr("width", function(d) {
         if ( Number.isNaN(d.x1) || Number.isNaN(d.x0) ) {}
         else {return (d.x1 - d.x0)};
-     })
+      })
       .attr("height", function(d) {
         if ( Number.isNaN(d.y1) || Number.isNaN(d.y0) ) {}
         else {return (d.y1 - d.y0)};
-     })
+      })
+      // Color the rectangle
       .attr("fill", function(d) {return colorTreemap(d.data[passedTrade]);})
       .on("mousemove", function(d) {showTooltip(d.data.country, (d.data[passedTrade]), "kg") ;})
       .on("mouseout", function() {tooltip.classed("hidden", true);})

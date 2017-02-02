@@ -29,6 +29,7 @@ function updateBarchart(passedTrade, transitionOption, passedData) {
   for (var lowerYear = year - 9 ; lowerYear <= year ; lowerYear++) {
     var dataPast = passedData[country][lowerYear];
 
+    // Continue if dataPast is not empty
     if (dataPast) {
       dataPast.children.forEach(function(element) {
         if (element.country === treemapCountry) {
@@ -47,6 +48,7 @@ function updateBarchart(passedTrade, transitionOption, passedData) {
   // If there is no data available or only 1 year: remove barchart
   if (barchartData.length === 0 || barchartData.length === 1) {clearBarchart(); return;}
 
+  // Equal width for all bars
   var xBarchart = d3.scaleBand().rangeRound([0, bcWidth]).padding(0.1)
         .domain(barchartData.map(function(d) {return(d.year);})),
       yBarchart = d3.scaleLinear()
@@ -95,6 +97,7 @@ function updateBarchart(passedTrade, transitionOption, passedData) {
       .style("text-anchor", "end")
       .text("Kilogram");
 
+  // Join the data 
   var bars = g.selectAll("rect")
     .data(barchartData);
 
@@ -120,7 +123,7 @@ function updateBarchart(passedTrade, transitionOption, passedData) {
     })
     .on("mouseout", function() {tooltip.classed("hidden", true);});
 
-  // the 'update' set:
+  // The 'update' set:
   bars.transition()
     .duration(300)
       .attr("class", "bar")
