@@ -39,6 +39,8 @@ The d3 treemap squarified tiling method produced some pretty ugly treemaps. Cont
 
 At first I wanted to display the country names and values in the rectangles of the treemap. Due to some strange error the text would appear in the HTML but would not be visible. I solved this by showing a tooltip when hovering over a rectangle. 
 
+On advice of BetterCodeHub I split the javascript into multiple seperate files and rewrote it so that the options are global variables instead of passing them back and forth between functions.
+
 ## Defend your decisions by writing an argument of a most a single paragraph. Why was it good to do it different than you thought before? Are there trade-offs for your current solution? In an ideal world, given much more time, would you choose another solution?
 
 At first the plan was to use a line graph instead of a barchart for the third linked view. I changed it to barchart since the data is missing in some years for some countries and with a line chart this can look like a sharp decrease in the previous year and a large increase for the next year. A barchart better reflects that data is missing and is also more useful if there is data for only a few years instead of the regular 10 years. 
