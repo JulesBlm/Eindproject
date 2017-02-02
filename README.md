@@ -27,13 +27,15 @@ In case I can't find a complete dataset for the world I could switch to another 
 
 The first screen would look something like this
 
-![Chloropleth map](https://github.com/JulesBlm/Eindproject/blob/master/oil%20prod.svg)
+![Chloropleth map](https://github.com/JulesBlm/Eindproject/blob/master/img/Sketch%200.png?raw=true)
 
 Then when a nation is clicked a treemap like this, for either import or export, is shown.
 
-![Treemap imports example](https://github.com/JulesBlm/Eindproject/blob/master/treemap%20oil.png)
+![Treemap imports example](https://github.com/JulesBlm/Eindproject/blob/master/img/sketch1.jpg?raw=true)
 
 Then when a square is clicked it will show the import/export relation in a barchart between the nation selected in the map and the nation selected in the treemap
+
+![Third view](https://github.com/JulesBlm/Eindproject/blob/master/img/sketch2.jpg?raw=true)
 
 ## What separate parts of the application can be defined (decomposing the problem) and how these should work together
 Chloropleth map
@@ -46,3 +48,4 @@ Barchart
 
 ## A review of similar applications or visualizations in terms of features and technical aspects (what do they offer? how have they implemented it?)
 
+The MIT Media atlas http://atlas.media.mit.edu/en/visualize/tree_map/hs92/export/bgr/all/show/2014/ has a similar treemap only for all exports of a nation not just crude oil.
