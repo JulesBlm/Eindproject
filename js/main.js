@@ -150,7 +150,7 @@ function ready(error, world, imports, exports, data) {
     .attr("class", "track-overlay")
     .call(d3.drag()
         .on("start.interrupt", function() {slider.interrupt();})
-        .on("start drag", function() {updateSliderCircle(xSlider.invert(d3.event.x)) ;}));
+        .on("start drag", function() {updateSlider(xSlider.invert(d3.event.x)) ;}));
 
   slider.insert("g", ".track-overlay")
       .attr("class", "ticks")
@@ -167,7 +167,7 @@ function ready(error, world, imports, exports, data) {
     .attr("r", 7)
     .attr("cx", xSlider(2013));
 
-  function updateSliderCircle(h) {
+  function updateSlider(h) {
       // Move the the circle
       handle.attr("cx", xSlider(h));
 
