@@ -5,7 +5,7 @@
     d3.select("#treemapdiv").select("h4").remove();
 
     // Break if Antarctica, Westernsahara or Puntland is clicked bc no data exists for these.
-    if (country === "ATA" || country === "ESH" || country === "PUNT") {return;}
+    if (country === "ATA" || country === "ESH" || country === "PUNT" || country === "SSD") {return;}
 
     // Get a string for selected trade
     if (document.getElementById("exports").checked) {var tradeString = "exports";}
